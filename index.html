@@ -17,8 +17,50 @@
 <meta name="twitter:description" content="Residential cleaning in Northeast Philly and Center City/Riverwards. Flat published prices, locked in writing before tax.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231E2F4A'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23EDE6D0' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": ["LocalBusiness", "HouseCleaning"],
+  "name": "Bell & Broom Cleaning LLC",
+  "url": "https://bellandbroom.com/",
+  "telephone": "+1-609-526-8336",
+  "email": "hello@bellandbroom.com",
+  "priceRange": "$95-$435",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Philadelphia",
+    "addressRegion": "PA",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      "opens": "08:00",
+      "closes": "20:00"
+    }
+  ],
+  "areaServed": [
+    {"@type": "PostalCode", "postalCode": "19102"},
+    {"@type": "PostalCode", "postalCode": "19103"},
+    {"@type": "PostalCode", "postalCode": "19106"},
+    {"@type": "PostalCode", "postalCode": "19107"},
+    {"@type": "PostalCode", "postalCode": "19111"},
+    {"@type": "PostalCode", "postalCode": "19114"},
+    {"@type": "PostalCode", "postalCode": "19115"},
+    {"@type": "PostalCode", "postalCode": "19116"},
+    {"@type": "PostalCode", "postalCode": "19122"},
+    {"@type": "PostalCode", "postalCode": "19123"},
+    {"@type": "PostalCode", "postalCode": "19125"},
+    {"@type": "PostalCode", "postalCode": "19136"},
+    {"@type": "PostalCode", "postalCode": "19149"},
+    {"@type": "PostalCode", "postalCode": "19152"},
+    {"@type": "PostalCode", "postalCode": "19154"}
+  ]
+}
+</script>
 </head>
-<body>
+<body class="has-mbar">
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <header class="top">
@@ -31,6 +73,7 @@
       <a href="#areas">Areas</a>
       <a href="#faq">FAQ</a>
       <a href="#contact">Contact</a>
+      <a href="book.html">Book</a>
       <a class="nav-call" href="tel:+16095268336">Call (609) 526-8336</a>
     </nav>
   </div>
@@ -43,10 +86,34 @@
       <h1>Bell &amp; Broom Cleaning&nbsp;LLC</h1>
       <p class="lede">A clean home, a fixed price, and a cleaner who knows your place.</p>
       <div class="cta-row">
+        <a class="btn btn-navy" href="book.html">Book a clean</a>
         <a class="btn btn-navy" href="tel:+16095268336">Call (609) 526-8336</a>
         <a class="btn btn-quiet" href="mailto:hello@bellandbroom.com">hello@bellandbroom.com</a>
       </div>
       <p class="hint">Call or email to book.</p>
+    </div>
+  </section>
+
+  <section class="trust" aria-label="What you can count on">
+    <div class="wrap">
+      <ul class="trust-list">
+        <li>
+          <h3>Our guarantee</h3>
+          <p>Missed checklist items only. Report within 48 hours with a photo and the original cleaner touches it up. Not a full re-clean.</p>
+        </li>
+        <li>
+          <h3>Same cleaner</h3>
+          <p>Your cleaner of record, visit after visit.</p>
+        </li>
+        <li>
+          <h3>Two-deep bench</h3>
+          <p>A backup cleaner in every area, and an automatic refund if a job goes unfilled.</p>
+        </li>
+        <li>
+          <h3>Insured cleaners</h3>
+          <p>Cleaners carry their own insurance.</p>
+        </li>
+      </ul>
     </div>
   </section>
 
@@ -85,24 +152,83 @@
           <h3>Standard clean</h3>
           <p class="price"><span>from</span> $140</p>
           <p class="note">2BR whole home: $195 one-time</p>
+          <a class="card-link" href="book.html?service=standard">Book this service</a>
         </li>
         <li class="card">
           <h3>Deep clean</h3>
           <p class="price"><span>from</span> $210</p>
+          <a class="card-link" href="book.html?service=deep">Book this service</a>
         </li>
         <li class="card">
           <h3>Move-in / move-out</h3>
           <p class="price"><span>from</span> $230</p>
+          <a class="card-link" href="book.html?service=move">Book this service</a>
         </li>
         <li class="card">
           <h3>Recurring clean</h3>
           <p class="price"><span>from</span> $118</p>
+          <a class="card-link" href="book.html?service=recurring">Book this service</a>
         </li>
         <li class="card">
           <h3>Airbnb / short-term rental turnover</h3>
           <p class="price"><span>from</span> $95</p>
+          <a class="card-link" href="book.html?service=str">Book this service</a>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <section id="estimate" class="section">
+    <div class="wrap">
+      <p class="eyebrow">Price estimate</p>
+      <h2>See your price</h2>
+      <p class="sub">Pick a service and home size. Same prices as the booking form.</p>
+      <div class="calc card">
+        <div class="calc-fields">
+          <div class="field">
+            <label for="c-service">Service</label>
+            <select id="c-service">
+              <option value="standard">Standard clean</option>
+              <option value="deep">Deep clean</option>
+              <option value="move">Move-in / move-out</option>
+              <option value="recurring">Recurring clean</option>
+              <option value="str">Airbnb / short-term rental turnover</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-size">Home size</label>
+            <select id="c-size">
+              <option value="studio">Studio</option>
+              <option value="1br">1BR</option>
+              <option value="2br" selected>2BR</option>
+              <option value="3br">3BR</option>
+              <option value="4br">4BR</option>
+            </select>
+          </div>
+          <div class="field" id="c-freq-field" hidden>
+            <label for="c-freq">How often</label>
+            <select id="c-freq">
+              <option value="weekly">Weekly (20% off)</option>
+              <option value="biweekly" selected>Biweekly (15% off)</option>
+              <option value="monthly">Monthly (10% off)</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="c-baths">Extra bathrooms (+$25 each)</label>
+            <select id="c-baths">
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
+        <div class="calc-result">
+          <p class="calc-total" id="c-total" aria-live="polite"></p>
+          <p class="calc-note" id="c-note">Estimate before tax. Your quote is locked in writing.</p>
+          <a class="btn btn-navy" id="c-book" href="book.html">Book this</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -196,7 +322,10 @@
           <p>Sunday–Saturday<br>8:00 AM to 8:00 PM</p>
         </div>
       </div>
-      <a class="btn btn-tan btn-lg" href="tel:+16095268336">Call (609) 526-8336</a>
+      <div class="contact-btns">
+        <a class="btn btn-tan btn-lg" href="book.html">Book a clean</a>
+        <a class="btn btn-tan btn-lg" href="tel:+16095268336">Call (609) 526-8336</a>
+      </div>
     </div>
   </section>
 </main>
@@ -205,9 +334,78 @@
   <div class="wrap">
     <p>© 2026 Bell &amp; Broom Cleaning LLC · Philadelphia, PA</p>
     <p><a href="#how">How booking works</a> · <a href="#services">Services</a> · <a href="#promise">Our promise</a> · <a href="#areas">Areas</a> · <a href="#faq">FAQ</a> · <a href="#contact">Contact</a></p>
-    <p><a href="/privacy.html">Privacy policy (draft)</a> · <a href="/book.html">Booking interest — opens Jan 4, 2027</a></p>
+    <p><a href="/privacy.html">Privacy policy (draft)</a> · <a href="/book.html">Book a clean — bookings open Jan 4, 2027</a></p>
   </div>
 </footer>
+
+<div class="mbar" role="region" aria-label="Quick actions">
+  <a class="btn btn-tan" href="book.html">Book</a>
+  <a class="btn btn-call" href="tel:+16095268336">Call</a>
+</div>
+
+<script>
+/*PRICING-START*/
+var PRICES = {
+  standard: { studio: 140, '1br': 165, '2br': 195, '3br': 230, '4br': 275 },
+  deep:     { studio: 210, '1br': 260, '2br': 310, '3br': 370, '4br': 435 },
+  move:     { studio: 230, '1br': 280, '2br': 330, '3br': 380, '4br': 435 },
+  str:      { studio: 95,  '1br': 130, '2br': 170, '3br': 215, '4br': null } // 4BR STR: call for quote, no price invented
+};
+var DISCOUNT = { weekly: 20, biweekly: 15, monthly: 10 };
+var BATH_PRICE = 25;
+
+// Returns {status: 'incomplete'|'quote'|'ok', base, pct, discBase, baths, bathTotal, total}
+function estimate(service, size, freq, baths) {
+  if (!service || !size) return { status: 'incomplete' };
+  var table = service === 'recurring' ? PRICES.standard : PRICES[service];
+  if (!table) return { status: 'incomplete' };
+  var base = table[size];
+  if (base === null || base === undefined) return { status: 'quote' };
+  var pct = 0;
+  if (service === 'recurring') {
+    if (!DISCOUNT[freq]) return { status: 'incomplete', needFreq: true };
+    pct = DISCOUNT[freq];
+  }
+  var discBase = Math.round(base * (100 - pct) / 100); // discount on base first
+  var n = Math.max(0, Math.min(3, Math.floor(Number(baths) || 0)));
+  var bathTotal = n * BATH_PRICE;                      // bathrooms at full price
+  return { status: 'ok', base: base, pct: pct, discBase: discBase, baths: n, bathTotal: bathTotal, total: discBase + bathTotal };
+}
+/*PRICING-END*/
+
+(function () {
+  var $ = function (id) { return document.getElementById(id); };
+  var svc = $('c-service'), size = $('c-size'), freq = $('c-freq'), baths = $('c-baths');
+  function render() {
+    var rec = svc.value === 'recurring';
+    $('c-freq-field').hidden = !rec;
+    var e = estimate(svc.value, size.value, rec ? freq.value : '', baths.value);
+    var total = $('c-total'), note = $('c-note');
+    if (e.status === 'ok') {
+      total.textContent = '$' + e.total;
+      note.textContent = 'Estimate before tax, quote locked in writing.';
+    } else if (e.status === 'quote') {
+      total.textContent = '';
+      total.appendChild(document.createTextNode('Call for quote: '));
+      var a = document.createElement('a');
+      a.href = 'tel:+16095268336'; a.textContent = '(609) 526-8336';
+      total.appendChild(a);
+      note.textContent = 'We do not publish an online price for this size.';
+    } else {
+      total.textContent = '\u2014';
+      note.textContent = 'Choose a service and home size.';
+    }
+    var q = new URLSearchParams();
+    q.set('service', svc.value);
+    q.set('size', size.value);
+    if (rec) q.set('freq', freq.value);
+    if (Number(baths.value)) q.set('baths', baths.value);
+    $('c-book').href = 'book.html?' + q.toString();
+  }
+  [svc, size, freq, baths].forEach(function (el) { el.addEventListener('change', render); });
+  render();
+})();
+</script>
 
 </body>
 </html>

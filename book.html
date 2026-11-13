@@ -569,6 +569,23 @@ $('edit-link').addEventListener('click', function (ev) {
   f.service.focus({ preventScroll: true });
 });
 
+// Preselect from the query string (e.g. book.html?service=recurring&size=2br&freq=biweekly&baths=1).
+(function () {
+  var q = new URLSearchParams(window.location.search);
+  function pick(key) {
+    var v = q.get(key);
+    if (!v) return;
+    for (var i = 0; i < f[key].options.length; i++) {
+      if (f[key].options[i].value === v && v !== '') { f[key].value = v; return; }
+    }
+  }
+  pick('service');
+  pick('size');
+  if (f.service.value === 'recurring') pick('freq');
+  var b = q.get('baths');
+  if (b && /^[0-3]$/.test(b)) f.baths.value = b;
+})();
+
 // Browsers may restore values on reload.
 f.service.dispatchEvent(new Event('change'));
 renderEstimate();

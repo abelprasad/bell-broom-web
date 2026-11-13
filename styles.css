@@ -202,3 +202,51 @@ section[id] { scroll-margin-top: 88px; }
   .zips { grid-template-columns: repeat(3, 1fr); }
   .contact-grid p { font-size: 20px; }
 }
+
+/* Service card booking link */
+.card-link {
+  display: inline-block; margin-top: 18px; font-weight: 600; color: var(--navy);
+  padding: 10px 0; /* tap target */
+}
+
+/* Trust strip */
+.trust { background: var(--navy-dark); padding: 40px 0; }
+.trust-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.trust h3 { color: var(--cream); font-size: 19px; }
+.trust p { margin: 8px 0 0; color: #D9D2C4; font-size: 15px; line-height: 1.5; }
+
+/* Homepage price calculator */
+.calc { margin-top: 40px; display: grid; gap: 32px; grid-template-columns: 1fr; max-width: 860px; }
+@media (min-width: 800px) { .calc { grid-template-columns: 1.3fr 1fr; align-items: center; } }
+.calc-fields { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); min-width: 0; }
+.calc .field label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 8px; color: var(--navy); }
+.calc .field select {
+  width: 100%; min-height: 50px; padding: 12px 14px; font: 17px/1.4 var(--sans); color: var(--ink);
+  background: #FFFFFF; border: 1px solid #B9AE98; border-radius: 10px; appearance: auto;
+}
+.calc .field select:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.calc-result { background: var(--navy-dark); color: var(--cream); border-radius: 12px; padding: 24px; }
+.calc-total { margin: 0; font: 400 48px/1.1 var(--serif); color: var(--cream); font-variant-numeric: lining-nums tabular-nums; }
+.calc-total a { color: var(--cream); font-size: 26px; }
+.calc-note { margin: 8px 0 20px; font-size: 14px; color: #D9D2C4; }
+.calc-result .btn-navy { background: var(--tan); color: var(--navy-dark); }
+.calc-result .btn-navy:hover { background: #C9B48E; }
+.calc-result .btn:focus-visible, .calc-result a:focus-visible { outline-color: var(--tan); }
+
+.contact-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+
+/* Sticky mobile bar (index.html only) */
+.mbar { display: none; }
+@media (max-width: 600px) {
+  body.has-mbar { padding-bottom: calc(76px + env(safe-area-inset-bottom)); }
+  .mbar {
+    display: flex; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 9;
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: var(--navy-dark); border-top: 1px solid var(--tan);
+  }
+  .mbar .btn { flex: 1; min-height: 48px; padding: 0 12px; font-size: 16px; }
+  .mbar .btn-call { background: transparent; color: var(--cream); border: 1px solid var(--tan); }
+  .mbar .btn:focus-visible { outline-color: var(--tan); }
+  .contact-btns { flex-direction: column; gap: 0; }
+  .contact-btns .btn-lg { width: 100%; padding: 0 16px; }
+}

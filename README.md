@@ -12,19 +12,9 @@ Live: https://bellandbroom.com/ (also https://bell-broom.pages.dev/)
 
 ## Deploy
 
-Requires Cloudflare auth: either  (OAuth device flow) or CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID in the environment.
+Requires Cloudflare auth: either wrangler login (OAuth device flow) or CLOUDFLARE_API_TOKEN + CLOUDFLARE_ACCOUNT_ID in the environment.
 
-
- ⛅️ wrangler 4.160.1 (update available 4.162.0)
-───────────────────────────────────────────────
-Uploading... (8/9)
-Uploading... (9/9)
-✨ Success! Uploaded 1 files (8 already uploaded) (0.98 sec)
-
-🌎 Deploying...
-✨ Deployment complete! Take a peek over at https://09e06fb0.bell-broom.pages.dev
-
-Deploys to the Cloudflare Pages project .
+Run ./deploy.sh — deploys to the Cloudflare Pages project bell-broom.
 
 ## Notes
 

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex, nofollow">
+<title>Request a booking · Bell &amp; Broom Cleaning LLC</title>
+<meta name="description" content="Request a clean from Bell &amp; Broom Cleaning LLC. Bookings open Jan 4, 2027. This is a request; we confirm it back. No payment now.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231E2F4A'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23EDE6D0' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<style>
+:root { color-scheme: light dark; }
+body { forced-color-adjust: none; }
+
+.page { background: var(--surface); padding: 72px 0 96px; }
+.page .wrap { max-width: 1080px; }
+.notice {
+  margin: 28px 0 0; padding: 16px 20px; max-width: 720px;
+  background: var(--cream); border: 1px solid var(--tan); border-radius: 12px; color: var(--ink);
+}
+.notice p { margin: 0; }
+.notice p + p { margin-top: 8px; }
+
+.book-layout { display: grid; gap: 40px; grid-template-columns: 1fr; margin-top: 40px; align-items: start; }
+@media (min-width: 900px) { .book-layout { grid-template-columns: minmax(0, 1fr) 340px; gap: 56px; } }
+
+.book-form { display: grid; gap: 20px; min-width: 0; }
+.book-form fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 20px; }
+.book-form legend { font: 400 24px/1.25 var(--serif); color: var(--navy); padding: 0; margin-bottom: 16px; }
+.group + .group { margin-top: 12px; padding-top: 28px; border-top: 1px solid var(--line); }
+
+.field label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 8px; color: var(--navy); }
+.field .opt { font-weight: 400; color: var(--ink-3); }
+.field input, .field select, .field textarea {
+  width: 100%; min-height: 50px; padding: 12px 14px;
+  font: 17px/1.4 var(--sans); color: var(--ink);
+  background: #FFFFFF; border: 1px solid #B9AE98; border-radius: 10px;
+}
+.field select { appearance: auto; }
+.field textarea { min-height: 110px; resize: vertical; }
+.field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
+.field [aria-invalid="true"] { border-color: var(--red); border-width: 2px; }
+.help { margin: 6px 0 0; font-size: 14px; color: var(--ink-3); }
+.err { margin: 6px 0 0; font-size: 15px; font-weight: 600; color: var(--red); }
+.err:empty { display: none; }
+.form-row { display: grid; gap: 20px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
+
+.form-error {
+  display: none; padding: 14px 18px; border: 2px solid var(--red); border-radius: 12px;
+  background: #FFF4F2; color: var(--red); font-weight: 600;
+}
+.form-error.show { display: block; }
+
+.pill-note { display: inline-block; font-size: 14px; color: var(--ink-3); }
+
+/* Estimate panel */
+.estimate-wrap { min-width: 0; }
+@media (min-width: 900px) { .estimate-wrap { position: sticky; top: 96px; } }
+.estimate {
+  background: var(--navy-dark); color: var(--cream);
+  border-radius: 14px; padding: 28px;
+}
+.estimate .eyebrow { color: var(--tan); margin-bottom: 10px; }
+.est-total { font: 400 52px/1.05 var(--serif); color: var(--cream); margin: 0; font-variant-numeric: lining-nums tabular-nums; }
+.est-total.small { font-size: 28px; line-height: 1.2; }
+.est-sub { margin: 6px 0 0; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--tan); font-weight: 600; }
+.est-lines { list-style: none; margin: 18px 0 0; padding: 14px 0 0; border-top: 1px solid rgb(237 230 208 / .25); font-size: 15px; color: #E4DDCC; }
+.est-lines li { display: flex; justify-content: space-between; gap: 12px; padding: 3px 0; }
+.est-lines li span:last-child { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.est-lines:empty { display: none; }
+.est-terms { list-style: none; margin: 18px 0 0; padding: 0; font-size: 14px; color: #D9D2C4; }
+.est-terms li { padding: 3px 0 3px 18px; position: relative; }
+.est-terms li::before { content: "\2713"; position: absolute; left: 0; color: var(--tan); }
+.estimate a { color: var(--cream); font-weight: 600; }
+.estimate a:focus-visible { outline-color: var(--tan); }
+.est-bar { display: none; }
+@media (max-width: 899px) {
+  .est-bar {
+    display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+    position: sticky; bottom: 0; z-index: 5;
+    margin: 0 -16px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    background: var(--navy-dark); color: var(--cream); border-top: 1px solid var(--tan);
+  }
+  .est-bar .lbl { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--tan); font-weight: 600; }
+  .est-bar .val { font: 400 24px/1.1 var(--serif); font-variant-numeric: lining-nums tabular-nums; text-align: right; }
+}
+
+.submit-row { display: grid; gap: 12px; margin-top: 8px; }
+.submit-row .btn { width: 100%; cursor: pointer; border: 0; }
+.submit-row .btn:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+@media (min-width: 640px) { .submit-row .btn { width: auto; justify-self: start; } }
+
+/* Summary */
+.summary {
+  display: none; margin-top: 56px; padding: 32px; max-width: 760px;
+  background: var(--cream); border: 1px solid var(--tan); border-radius: 14px; scroll-margin-top: 88px;
+}
+.summary.show { display: block; }
+.summary:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
+.summary h2 { font-size: clamp(26px, 4vw, 34px); }
+.summary dl { margin: 24px 0 0; display: grid; grid-template-columns: 1fr; gap: 0; }
+.summary dt { font: 600 13px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--brown); padding-top: 14px; }
+.summary dd { margin: 4px 0 0; padding-bottom: 14px; border-bottom: 1px solid var(--tan); overflow-wrap: anywhere; white-space: pre-wrap; }
+@media (min-width: 640px) {
+  .summary dl { grid-template-columns: 190px 1fr; }
+  .summary dt { padding: 14px 0; border-bottom: 1px solid var(--tan); }
+  .summary dd { margin: 0; padding: 14px 0; }
+}
+.summary .big { font: 400 32px/1.1 var(--serif); color: var(--navy); }
+.summary .statement { margin: 24px 0 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--tan); border-radius: 12px; }
+.summary .statement p { margin: 0; }
+.summary .statement p + p { margin-top: 8px; }
+.summary .actions { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
+@media (max-width: 480px) {
+  .page { padding: 48px 0 72px; }
+  .summary { padding: 24px 18px; }
+  .summary .actions .btn { width: 100%; padding: 0 16px; }
+  .estimate { padding: 22px 18px; }
+  .est-total { font-size: 44px; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <a class="wordmark" href="index.html">Bell <span>&amp;</span> Broom</a>
+    <nav aria-label="Sections">
+      <a href="index.html#how">How booking works</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#promise">Our promise</a>
+      <a href="index.html#areas">Areas</a>
+      <a href="index.html#faq">FAQ</a>
+      <a href="index.html#contact">Contact</a>
+      <a class="nav-call" href="tel:+16095268336">Call (609) 526-8336</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <section id="book" class="section page">
+    <div class="wrap">
+      <p class="eyebrow">Request a booking</p>
+      <h1>Request your clean</h1>
+      <p class="sub">Pick your service and home size, see your price right away, and send us your request.</p>
+
+      <div class="notice" role="note">
+        <p><strong>Bookings open Jan 4, 2027.</strong> This is a request, not a confirmed booking. We confirm it back to you in writing.</p>
+        <p><strong>No payment now, no card details asked.</strong></p>
+      </div>
+
+      <div class="book-layout">
+        <form class="book-form" id="booking-form" novalidate autocomplete="on">
+          <div class="form-error" id="form-error" role="alert" tabindex="-1"></div>
+
+          <fieldset class="group">
+            <legend>Your clean</legend>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="service">Service</label>
+                <select id="service" name="service" required aria-describedby="service-err">
+                  <option value="">Choose a service</option>
+                  <option value="standard">Standard clean</option>
+                  <option value="deep">Deep clean</option>
+                  <option value="move">Move-in / move-out</option>
+                  <option value="recurring">Recurring clean</option>
+                  <option value="str">Airbnb / short-term rental turnover</option>
+                </select>
+                <p class="err" id="service-err"></p>
+              </div>
+              <div class="field">
+                <label for="size">Home size</label>
+                <select id="size" name="size" required aria-describedby="size-err">
+                  <option value="">Choose home size</option>
+                  <option value="studio">Studio</option>
+                  <option value="1br">1 bedroom</option>
+                  <option value="2br">2 bedrooms</option>
+                  <option value="3br">3 bedrooms</option>
+                  <option value="4br">4 bedrooms</option>
+                </select>
+                <p class="err" id="size-err"></p>
+              </div>
+            </div>
+
+            <div class="field" id="freq-field" hidden>
+              <label for="freq">How often</label>
+              <select id="freq" name="freq" aria-describedby="freq-err">
+                <option value="">Choose a frequency</option>
+                <option value="weekly">Weekly (20% off)</option>
+                <option value="biweekly">Biweekly (15% off)</option>
+                <option value="monthly">Monthly (10% off)</option>
+              </select>
+              <p class="err" id="freq-err"></p>
+            </div>
+
+            <div class="field">
+              <label for="baths">Extra bathrooms</label>
+              <input type="number" id="baths" name="baths" min="0" max="3" step="1" value="0" inputmode="numeric" aria-describedby="baths-help baths-err">
+              <p class="help" id="baths-help">0 to 3. Each extra bathroom is +$25.</p>
+              <p class="err" id="baths-err"></p>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="date">Preferred date</label>
+                <input type="date" id="date" name="date" min="2027-01-04" required aria-describedby="date-help date-err">
+                <p class="help" id="date-help">Earliest date: Monday, Jan 4, 2027.</p>
+                <p class="err" id="date-err"></p>
+              </div>
+              <div class="field">
+                <label for="time">Arrival time slot</label>
+                <select id="time" name="time" required aria-describedby="time-err">
+                  <option value="">Choose a time</option>
+                  <option value="8:00 AM">8:00 AM</option>
+                  <option value="10:00 AM">10:00 AM</option>
+                  <option value="12:00 PM">12:00 PM</option>
+                  <option value="2:00 PM">2:00 PM</option>
+                  <option value="4:00 PM">4:00 PM</option>
+                </select>
+                <p class="err" id="time-err"></p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="group">
+            <legend>Your details</legend>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="name">Full name</label>
+                <input type="text" id="name" name="name" autocomplete="name" required aria-describedby="name-err">
+                <p class="err" id="name-err"></p>
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel" inputmode="tel" required aria-describedby="phone-err">
+                <p class="err" id="phone-err"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email" inputmode="email" required aria-describedby="email-err">
+              <p class="err" id="email-err"></p>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="street">Street address</label>
+                <input type="text" id="street" name="street" autocomplete="street-address" required aria-describedby="street-err">
+                <p class="err" id="street-err"></p>
+              </div>
+              <div class="field">
+                <label for="zip">ZIP code</label>
+                <input type="text" id="zip" name="zip" autocomplete="postal-code" inputmode="numeric" maxlength="5" required aria-describedby="zip-help zip-err">
+                <p class="help" id="zip-help">Philadelphia, PA. We serve 15 ZIP codes (see <a href="index.html#areas">service areas</a>).</p>
+                <p class="err" id="zip-err" role="alert"></p>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="notes">Notes <span class="opt">(optional)</span></label>
+              <textarea id="notes" name="notes" maxlength="600" placeholder="Pets, building access, anything we should know."></textarea>
+            </div>
+          </fieldset>
+
+          <div class="submit-row">
+            <button class="btn btn-navy btn-lg" type="submit" style="margin-top:0">Send my booking request</button>
+            <p class="pill-note">Estimate is before tax, your quote is locked in writing, and tax is added at checkout. No payment now, no card details asked. Sending opens an email to hello@bellandbroom.com with your request filled in.</p>
+          </div>
+
+          <div class="est-bar" aria-hidden="true">
+            <span class="lbl">Estimate, before tax</span>
+            <span class="val" id="bar-val">&mdash;</span>
+          </div>
+        </form>
+
+        <aside class="estimate-wrap" id="estimate-aside" aria-label="Price estimate">
+          <div class="estimate" id="estimate">
+            <p class="eyebrow">Your estimate</p>
+            <p class="est-total small" id="est-total" aria-live="polite">Choose a service and home size.</p>
+            <p class="est-sub" id="est-sub">Before tax</p>
+            <ul class="est-lines" id="est-lines"></ul>
+            <ul class="est-terms">
+              <li>Estimate is before tax.</li>
+              <li>Your quote is locked in writing.</li>
+              <li>Tax is added at checkout.</li>
+              <li>No payment now, no card details asked.</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <div class="summary" id="summary" tabindex="-1" aria-labelledby="summary-h">
+        <p class="eyebrow">Request ready</p>
+        <h2 id="summary-h">Your booking request</h2>
+        <dl id="summary-list"></dl>
+        <div class="statement">
+          <p><strong>Bookings open Jan 4, 2027.</strong> This is a request, not a confirmed booking. We confirm it back to you in writing.</p>
+          <p>No payment now, no card details asked. Tax is added at checkout.</p>
+          <p id="summary-quote"></p>
+        </div>
+        <p style="margin:20px 0 0">Your email app should have opened with this request filled in. Press send there to submit it. If nothing opened, use the button below or call <a href="tel:+16095268336">(609) 526-8336</a>.</p>
+        <div class="actions">
+          <a class="btn btn-navy" id="mailto-link" href="mailto:hello@bellandbroom.com">Open the email again</a>
+          <a class="btn btn-quiet" href="#book" id="edit-link">Edit my request</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p>© 2026 Bell &amp; Broom Cleaning LLC · Philadelphia, PA</p>
+    <p><a href="index.html#how">How booking works</a> · <a href="index.html#services">Services</a> · <a href="index.html#promise">Our promise</a> · <a href="index.html#areas">Areas</a> · <a href="index.html#faq">FAQ</a> · <a href="index.html#contact">Contact</a></p>
+    <p><a href="/privacy.html">Privacy policy (draft)</a> · <a href="/book.html">Booking requests: opens Jan 4, 2027</a></p>
+  </div>
+</footer>
+
+<script>
+/*PRICING-START*/
+var PRICES = {
+  standard: { studio: 140, '1br': 165, '2br': 195, '3br': 230, '4br': 275 },
+  deep:     { studio: 210, '1br': 260, '2br': 310, '3br': 370, '4br': 435 },
+  move:     { studio: 230, '1br': 280, '2br': 330, '3br': 380, '4br': 435 },
+  str:      { studio: 95,  '1br': 130, '2br': 170, '3br': 215, '4br': null } // 4BR STR: call for quote, no price invented
+};
+var DISCOUNT = { weekly: 20, biweekly: 15, monthly: 10 };
+var BATH_PRICE = 25;
+
+// Returns {status: 'incomplete'|'quote'|'ok', base, pct, discBase, baths, bathTotal, total}
+function estimate(service, size, freq, baths) {
+  if (!service || !size) return { status: 'incomplete' };
+  var table = service === 'recurring' ? PRICES.standard : PRICES[service];
+  if (!table) return { status: 'incomplete' };
+  var base = table[size];
+  if (base === null || base === undefined) return { status: 'quote' };
+  var pct = 0;
+  if (service === 'recurring') {
+    if (!DISCOUNT[freq]) return { status: 'incomplete', needFreq: true };
+    pct = DISCOUNT[freq];
+  }
+  var discBase = Math.round(base * (100 - pct) / 100); // discount on base first
+  var n = Math.max(0, Math.min(3, Math.floor(Number(baths) || 0)));
+  var bathTotal = n * BATH_PRICE;                      // bathrooms at full price
+  return { status: 'ok', base: base, pct: pct, discBase: discBase, baths: n, bathTotal: bathTotal, total: discBase + bathTotal };
+}
+/*PRICING-END*/
+
+var ZIPS = ['19102','19103','19106','19107','19111','19114','19115','19116','19122','19123','19125','19136','19149','19152','19154'];
+var MIN_DATE = '2027-01-04';
+var PHONE = '(609) 526-8336';
+var LABELS = {
+  service: { standard: 'Standard clean', deep: 'Deep clean', move: 'Move-in / move-out', recurring: 'Recurring clean', str: 'Airbnb / short-term rental turnover' },
+  size: { studio: 'Studio', '1br': '1 bedroom', '2br': '2 bedrooms', '3br': '3 bedrooms', '4br': '4 bedrooms' },
+  freq: { weekly: 'Weekly (20% off base)', biweekly: 'Biweekly (15% off base)', monthly: 'Monthly (10% off base)' }
+};
+
+var $ = function (id) { return document.getElementById(id); };
+var form = $('booking-form');
+var f = {};
+['service','size','freq','baths','date','time','name','phone','email','street','zip','notes'].forEach(function (k) { f[k] = $(k); });
+
+function money(n) { return '$' + n; }
+
+function currentEstimate() {
+  return estimate(f.service.value, f.size.value, f.freq.value, f.baths.value);
+}
+
+function renderEstimate() {
+  var e = currentEstimate();
+  var total = $('est-total'), sub = $('est-sub'), lines = $('est-lines'), bar = $('bar-val');
+  lines.innerHTML = '';
+  total.classList.remove('small');
+  function line(a, b) {
+    var li = document.createElement('li');
+    var s1 = document.createElement('span'); s1.textContent = a;
+    var s2 = document.createElement('span'); s2.textContent = b;
+    li.appendChild(s1); li.appendChild(s2); lines.appendChild(li);
+  }
+  if (e.status === 'ok') {
+    total.textContent = money(e.total);
+    sub.textContent = 'Before tax';
+    bar.textContent = money(e.total);
+    line(e.pct ? 'Base ' + money(e.base) + ' less ' + e.pct + '%' : 'Base price', money(e.discBase));
+    if (e.baths) line(e.baths + ' extra bathroom' + (e.baths > 1 ? 's' : '') + ' at ' + money(BATH_PRICE), '+' + money(e.bathTotal));
+    line('Estimate before tax', money(e.total));
+  } else if (e.status === 'quote') {
+    total.classList.add('small');
+    total.innerHTML = '';
+    total.appendChild(document.createTextNode('Call for quote: '));
+    var a = document.createElement('a'); a.href = 'tel:+16095268336'; a.textContent = PHONE;
+    total.appendChild(a);
+    sub.textContent = 'No online estimate for this size';
+    bar.textContent = 'Call for quote';
+  } else {
+    total.classList.add('small');
+    total.textContent = e.needFreq ? 'Choose how often to see your estimate.' : 'Choose a service and home size.';
+    sub.textContent = 'Before tax';
+    bar.textContent = '—';
+  }
+}
+
+/* ---- validation ---- */
+function setErr(key, msg) {
+  var el = $(key + '-err'), input = f[key];
+  el.textContent = msg || '';
+  if (msg) input.setAttribute('aria-invalid', 'true'); else input.removeAttribute('aria-invalid');
+  return !msg;
+}
+
+function zipMessage(z) {
+  if (!z) return 'Enter your 5-digit ZIP code.';
+  if (!/^\d{5}$/.test(z)) return 'ZIP code must be 5 digits.';
+  if (ZIPS.indexOf(z) === -1) return 'Sorry, ' + z + ' is outside our service area. We currently clean only in ZIP codes ' + ZIPS.join(', ') + '. Call ' + PHONE + ' if you are close and have questions.';
+  return '';
+}
+
+var validators = {
+  service: function () { return f.service.value ? '' : 'Choose a service.'; },
+  size: function () { return f.size.value ? '' : 'Choose your home size.'; },
+  freq: function () { return f.service.value === 'recurring' && !f.freq.value ? 'Choose how often you want us.' : ''; },
+  baths: function () {
+    var v = f.baths.value.trim();
+    if (v === '') return 'Enter 0 to 3 extra bathrooms.';
+    return /^[0-3]$/.test(v) ? '' : 'Extra bathrooms must be a whole number from 0 to 3.';
+  },
+  date: function () {
+    var v = f.date.value;
+    if (!v) return 'Choose a preferred date.';
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(v)) return 'Enter a valid date.';
+    return v < MIN_DATE ? 'Bookings open Jan 4, 2027. Choose that date or later.' : '';
+  },
+  time: function () { return f.time.value ? '' : 'Choose a time slot.'; },
+  name: function () { return f.name.value.trim().length >= 2 ? '' : 'Enter your full name.'; },
+  phone: function () { return f.phone.value.replace(/\D/g, '').length >= 10 ? '' : 'Enter a phone number with area code.'; },
+  email: function () { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(f.email.value.trim()) ? '' : 'Enter a valid email address.'; },
+  street: function () { return f.street.value.trim().length >= 3 ? '' : 'Enter your street address.'; },
+  zip: function () { return zipMessage(f.zip.value.trim()); }
+};
+var ORDER = ['service','size','freq','baths','date','time','name','phone','email','street','zip'];
+
+function check(key) { return setErr(key, validators[key]()); }
+
+function validateAll() {
+  var firstBad = null, count = 0;
+  ORDER.forEach(function (k) {
+    if (k === 'freq' && f.service.value !== 'recurring') { setErr('freq', ''); return; }
+    if (!check(k)) { count++; if (!firstBad) firstBad = k; }
+  });
+  return { count: count, first: firstBad };
+}
+
+/* ---- events ---- */
+f.service.addEventListener('change', function () {
+  var rec = f.service.value === 'recurring';
+  $('freq-field').hidden = !rec;
+  if (!rec) { f.freq.value = ''; setErr('freq', ''); }
+  setErr('service', '');
+  renderEstimate();
+});
+['size','freq','baths'].forEach(function (k) {
+  var h = function () { if (k !== 'baths') setErr(k, ''); renderEstimate(); };
+  f[k].addEventListener('change', h);
+  f[k].addEventListener('input', h);
+});
+['baths','date','time','name','phone','email','street'].forEach(function (k) {
+  f[k].addEventListener('blur', function () { check(k); });
+});
+f.zip.addEventListener('input', function () {
+  var z = f.zip.value.trim();
+  if (z.length === 5) check('zip'); else setErr('zip', '');
+});
+f.zip.addEventListener('blur', function () { if (f.zip.value.trim()) check('zip'); });
+f.date.addEventListener('change', function () { check('date'); });
+
+/* ---- submit ---- */
+function buildRequest() {
+  var e = currentEstimate();
+  var rows = [
+    ['Service', LABELS.service[f.service.value]],
+    ['Home size', LABELS.size[f.size.value]]
+  ];
+  if (f.service.value === 'recurring') rows.push(['Frequency', LABELS.freq[f.freq.value]]);
+  rows.push(['Extra bathrooms', f.baths.value + (Number(f.baths.value) ? ' (+' + money(Number(f.baths.value) * BATH_PRICE) + ')' : '')]);
+  rows.push(['Preferred date', f.date.value]);
+  rows.push(['Time slot', f.time.value]);
+  rows.push(['Name', f.name.value.trim()]);
+  rows.push(['Phone', f.phone.value.trim()]);
+  rows.push(['Email', f.email.value.trim()]);
+  rows.push(['Address', f.street.value.trim() + ', Philadelphia, PA ' + f.zip.value.trim()]);
+  rows.push(['Notes', f.notes.value.trim() || 'None']);
+  var est;
+  if (e.status === 'ok') {
+    est = money(e.total) + ' before tax';
+    if (e.pct) est += ' (base ' + money(e.base) + ' less ' + e.pct + '% = ' + money(e.discBase);
+    else est += ' (base ' + money(e.base);
+    est += e.baths ? ' + ' + e.baths + ' extra bathroom' + (e.baths > 1 ? 's' : '') + ' ' + money(e.bathTotal) + ')' : ')';
+  } else {
+    est = 'Call for quote (' + PHONE + ')';
+  }
+  return { rows: rows, est: est, e: e };
+}
+
+function buildMailto(req) {
+  var subject = 'Booking request: ' + LABELS.service[f.service.value] + ', ' + f.date.value + ' ' + f.time.value + ' (' + f.name.value.trim() + ')';
+  var body = ['Booking request for Bell & Broom Cleaning LLC', ''];
+  req.rows.forEach(function (r) { body.push(r[0] + ': ' + r[1]); });
+  body.push('Estimate: ' + req.est);
+  body.push('', 'Estimate is before tax. Quote locked in writing, tax added at checkout. No payment taken, no card details provided.');
+  body.push('This is a request. Bookings open Jan 4, 2027. Please confirm this request back to me.');
+  return 'mailto:hello@bellandbroom.com?subject=' + encodeURIComponent(subject).replace(/%20/g, '%20') +
+    '&body=' + encodeURIComponent(body.join('\r\n'));
+}
+
+function showSummary(req, href) {
+  var dl = $('summary-list');
+  dl.innerHTML = '';
+  function add(k, v, big) {
+    var dt = document.createElement('dt'); dt.textContent = k;
+    var dd = document.createElement('dd'); dd.textContent = v;
+    if (big) dd.className = 'big';
+    dl.appendChild(dt); dl.appendChild(dd);
+  }
+  req.rows.forEach(function (r) { add(r[0], r[1]); });
+  add('Estimate', req.e.status === 'ok' ? money(req.e.total) + ' before tax' : 'Call for quote', true);
+  var q = $('summary-quote');
+  q.textContent = req.e.status === 'ok'
+    ? 'Estimate: ' + req.est + '. Your quote is locked in writing when we confirm.'
+    : 'We do not publish a price for this size. Call ' + PHONE + ' for a quote; we will confirm your request after that.';
+  $('mailto-link').setAttribute('href', href);
+  var s = $('summary');
+  s.classList.add('show');
+  s.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  s.focus({ preventScroll: true });
+}
+
+form.addEventListener('submit', function (ev) {
+  ev.preventDefault();
+  var box = $('form-error');
+  var res = validateAll();
+  if (res.count) {
+    var zipBad = res.first === 'zip' || $('zip-err').textContent.indexOf('outside our service area') !== -1;
+    box.textContent = zipBad && res.count === 1
+      ? 'We cannot take this request: that ZIP code is outside our service area.'
+      : 'Please fix the ' + res.count + ' highlighted field' + (res.count > 1 ? 's' : '') + ' below.';
+    box.classList.add('show');
+    $('summary').classList.remove('show');
+    box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    f[res.first].focus({ preventScroll: true });
+    return;
+  }
+  box.classList.remove('show');
+  box.textContent = '';
+  var req = buildRequest();
+  var href = buildMailto(req);
+  showSummary(req, href);
+  window.location.href = href;
+});
+
+$('edit-link').addEventListener('click', function (ev) {
+  ev.preventDefault();
+  $('book').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  f.service.focus({ preventScroll: true });
+});
+
+// Browsers may restore values on reload.
+f.service.dispatchEvent(new Event('change'));
+renderEstimate();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,4 @@
+name = "bell-broom"
+pages_build_config = { pages_build_output_dir = "." }
+
+account_id = "b0d4af48b07348e9bd01a6a1ec24e599"

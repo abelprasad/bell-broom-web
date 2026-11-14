@@ -3,20 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
+<meta name="color-scheme" content="light">
 <meta name="robots" content="noindex, nofollow">
 <title>Request a booking · Bell &amp; Broom Cleaning LLC</title>
 <meta name="description" content="Request a clean from Bell &amp; Broom Cleaning LLC. Bookings open Jan 4, 2027. This is a request; we confirm it back. No payment now.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231E2F4A'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23EDE6D0' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="styles.css">
 <style>
-:root { color-scheme: light dark; }
+:root { color-scheme: light; }
 body { forced-color-adjust: none; }
 
 .page { background: var(--surface); padding: 72px 0 96px; }
 .page .wrap { max-width: 1080px; }
 .notice {
-  margin: 28px 0 0; padding: 16px 20px; max-width: 720px;
+  margin: 24px 0 0; padding: 16px 20px; max-width: 720px;
   background: var(--cream); border: 1px solid var(--tan); border-radius: 12px; color: var(--ink);
 }
 .notice p { margin: 0; }
@@ -28,27 +28,27 @@ body { forced-color-adjust: none; }
 .book-form { display: grid; gap: 20px; min-width: 0; }
 .book-form fieldset { border: 0; margin: 0; padding: 0; min-width: 0; display: grid; gap: 20px; }
 .book-form legend { font: 400 24px/1.25 var(--serif); color: var(--navy); padding: 0; margin-bottom: 16px; }
-.group + .group { margin-top: 12px; padding-top: 28px; border-top: 1px solid var(--line); }
+.group + .group { margin-top: 12px; padding-top: 24px; border-top: 1px solid var(--line); }
 
 .field label { display: block; font-weight: 600; font-size: 15px; margin-bottom: 8px; color: var(--navy); }
 .field .opt { font-weight: 400; color: var(--ink-3); }
 .field input, .field select, .field textarea {
-  width: 100%; min-height: 50px; padding: 12px 14px;
+  width: 100%; min-height: 52px; padding: 12px 16px;
   font: 17px/1.4 var(--sans); color: var(--ink);
-  background: #FFFFFF; border: 1px solid #B9AE98; border-radius: 10px;
+  background: var(--surface); border: 1px solid #B9AE98; border-radius: 8px;
 }
 .field select { appearance: auto; }
 .field textarea { min-height: 110px; resize: vertical; }
 .field input:focus-visible, .field select:focus-visible, .field textarea:focus-visible { outline: 3px solid var(--navy); outline-offset: 2px; }
 .field [aria-invalid="true"] { border-color: var(--red); border-width: 2px; }
-.help { margin: 6px 0 0; font-size: 14px; color: var(--ink-3); }
-.err { margin: 6px 0 0; font-size: 15px; font-weight: 600; color: var(--red); }
+.help { margin: 8px 0 0; font-size: 14px; color: var(--ink-3); }
+.err { margin: 8px 0 0; font-size: 15px; font-weight: 600; color: var(--red); }
 .err:empty { display: none; }
 .form-row { display: grid; gap: 20px; grid-template-columns: 1fr; }
 @media (min-width: 640px) { .form-row { grid-template-columns: 1fr 1fr; } }
 
 .form-error {
-  display: none; padding: 14px 18px; border: 2px solid var(--red); border-radius: 12px;
+  display: none; padding: 16px 20px; border: 2px solid var(--red); border-radius: 12px;
   background: #FFF4F2; color: var(--red); font-weight: 600;
 }
 .form-error.show { display: block; }
@@ -60,18 +60,18 @@ body { forced-color-adjust: none; }
 @media (min-width: 900px) { .estimate-wrap { position: sticky; top: 96px; } }
 .estimate {
   background: var(--navy-dark); color: var(--cream);
-  border-radius: 14px; padding: 28px;
+  border-radius: 12px; padding: 24px;
 }
-.estimate .eyebrow { color: var(--tan); margin-bottom: 10px; }
+.estimate .eyebrow { color: var(--tan); margin-bottom: 8px; }
 .est-total { font: 400 52px/1.05 var(--serif); color: var(--cream); margin: 0; font-variant-numeric: lining-nums tabular-nums; }
 .est-total.small { font-size: 28px; line-height: 1.2; }
-.est-sub { margin: 6px 0 0; font-size: 14px; letter-spacing: .08em; text-transform: uppercase; color: var(--tan); font-weight: 600; }
-.est-lines { list-style: none; margin: 18px 0 0; padding: 14px 0 0; border-top: 1px solid rgb(237 230 208 / .25); font-size: 15px; color: #E4DDCC; }
-.est-lines li { display: flex; justify-content: space-between; gap: 12px; padding: 3px 0; }
+.est-sub { margin: 8px 0 0; font-size: 14px; letter-spacing: 0; color: var(--tan); font-weight: 500; }
+.est-lines { list-style: none; margin: 16px 0 0; padding: 16px 0 0; border-top: 1px solid rgb(237 230 208 / .25); font-size: 15px; color: #E4DDCC; }
+.est-lines li { display: flex; justify-content: space-between; gap: 12px; padding: 4px 0; }
 .est-lines li span:last-child { font-variant-numeric: tabular-nums; white-space: nowrap; }
 .est-lines:empty { display: none; }
-.est-terms { list-style: none; margin: 18px 0 0; padding: 0; font-size: 14px; color: #D9D2C4; }
-.est-terms li { padding: 3px 0 3px 18px; position: relative; }
+.est-terms { list-style: none; margin: 16px 0 0; padding: 0; font-size: 14px; color: #D9D2C4; }
+.est-terms li { padding: 4px 0 4px 20px; position: relative; }
 .est-terms li::before { content: "\2713"; position: absolute; left: 0; color: var(--tan); }
 .estimate a { color: var(--cream); font-weight: 600; }
 .estimate a:focus-visible { outline-color: var(--tan); }
@@ -80,10 +80,10 @@ body { forced-color-adjust: none; }
   .est-bar {
     display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
     position: sticky; bottom: 0; z-index: 5;
-    margin: 0 -16px; padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    margin: 0 -16px; padding: 8px 16px calc(8px + env(safe-area-inset-bottom));
     background: var(--navy-dark); color: var(--cream); border-top: 1px solid var(--tan);
   }
-  .est-bar .lbl { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--tan); font-weight: 600; }
+  .est-bar .lbl { font-size: 14px; letter-spacing: 0; color: var(--tan); font-weight: 500; }
   .est-bar .val { font: 400 24px/1.1 var(--serif); font-variant-numeric: lining-nums tabular-nums; text-align: right; }
 }
 
@@ -95,29 +95,29 @@ body { forced-color-adjust: none; }
 /* Summary */
 .summary {
   display: none; margin-top: 56px; padding: 32px; max-width: 760px;
-  background: var(--cream); border: 1px solid var(--tan); border-radius: 14px; scroll-margin-top: 88px;
+  background: var(--cream); border: 1px solid var(--tan); border-radius: 12px; scroll-margin-top: 88px;
 }
 .summary.show { display: block; }
 .summary:focus-visible { outline: 3px solid var(--navy); outline-offset: 3px; }
 .summary h2 { font-size: clamp(26px, 4vw, 34px); }
 .summary dl { margin: 24px 0 0; display: grid; grid-template-columns: 1fr; gap: 0; }
-.summary dt { font: 600 13px/1.3 var(--sans); letter-spacing: .1em; text-transform: uppercase; color: var(--brown); padding-top: 14px; }
-.summary dd { margin: 4px 0 0; padding-bottom: 14px; border-bottom: 1px solid var(--tan); overflow-wrap: anywhere; white-space: pre-wrap; }
+.summary dt { font: 500 14px/1.3 var(--sans); letter-spacing: 0; color: var(--brown); padding-top: 16px; }
+.summary dd { margin: 4px 0 0; padding-bottom: 16px; border-bottom: 1px solid var(--tan); overflow-wrap: anywhere; white-space: pre-wrap; }
 @media (min-width: 640px) {
   .summary dl { grid-template-columns: 190px 1fr; }
-  .summary dt { padding: 14px 0; border-bottom: 1px solid var(--tan); }
-  .summary dd { margin: 0; padding: 14px 0; }
+  .summary dt { padding: 16px 0; border-bottom: 1px solid var(--tan); }
+  .summary dd { margin: 0; padding: 16px 0; }
 }
 .summary .big { font: 400 32px/1.1 var(--serif); color: var(--navy); }
-.summary .statement { margin: 24px 0 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--tan); border-radius: 12px; }
+.summary .statement { margin: 24px 0 0; padding: 16px 20px; background: var(--surface); border: 1px solid var(--tan); border-radius: 8px; }
 .summary .statement p { margin: 0; }
 .summary .statement p + p { margin-top: 8px; }
 .summary .actions { margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap; }
 @media (max-width: 480px) {
   .page { padding: 48px 0 72px; }
-  .summary { padding: 24px 18px; }
+  .summary { padding: 24px 16px; }
   .summary .actions .btn { width: 100%; padding: 0 16px; }
-  .estimate { padding: 22px 18px; }
+  .estimate { padding: 24px 16px; }
   .est-total { font-size: 44px; }
 }
 </style>

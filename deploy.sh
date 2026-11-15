@@ -10,5 +10,5 @@ export PATH="/home/abel/.npm-global/bin:$PATH"
 # logs are never served (Pages _redirects cannot return a 404 status).
 STAGE="$(mktemp -d)"
 trap 'rm -rf "$STAGE"' EXIT
-cp index.html book.html privacy.html styles.css "$STAGE"/
+cp index.html book.html privacy.html styles.css 404.html "$STAGE"/
 wrangler pages deploy "$STAGE" --project-name bell-broom --commit-dirty=true

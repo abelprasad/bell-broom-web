@@ -6,4 +6,9 @@
 set -e
 cd "$(dirname "$0")"
 export PATH="/home/abel/.npm-global/bin:$PATH"
-wrangler pages deploy . --project-name bell-broom
+# Stage only the public site files so README.md, wrangler.toml, deploy.sh and
+# logs are never served (Pages _redirects cannot return a 404 status).
+STAGE="$(mktemp -d)"
+trap 'rm -rf "$STAGE"' EXIT
+cp index.html book.html privacy.html styles.css "$STAGE"/
+wrangler pages deploy "$STAGE" --project-name bell-broom --commit-dirty=true
